@@ -3,7 +3,7 @@
     "networkMode": "bridge",
     "containerDefinitions": [
         {
-            "image": "${AWS_ECS_REPO_DOMAIN}/${IMAGE_NAME}:${IMAGE_VERSION}",
+            "image": "770676894615.dkr.ecr.us-east-2.amazonaws.com/redis-geo:latest",
             "name": "${IMAGE_NAME}",
             "cpu": 128,
             "memory": 256,
@@ -16,10 +16,14 @@
                     "protocol": "tcp"
                 }
             ],
-           "environment": [
+            "environment": [
                 {
                     "name": "VIRTUAL_HOST",
                     "value": "${AWS_VIRTUAL_HOST}"
+                },
+                {
+                    "name": "REDIS_HOST",
+                    "value": "${IMAGE_NAME}-redis"
                 },
                 {
                     "name": "LETSENCRYPT_HOST",
