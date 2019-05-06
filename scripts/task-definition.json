@@ -16,14 +16,10 @@
                     "protocol": "tcp"
                 }
             ],
-            "environment": [
+           "environment": [
                 {
                     "name": "VIRTUAL_HOST",
                     "value": "${AWS_VIRTUAL_HOST}"
-                },
-                {
-                    "name": "REDIS_HOST",
-                    "value": "${IMAGE_NAME}-redis"
                 },
                 {
                     "name": "LETSENCRYPT_HOST",
