@@ -1,6 +1,6 @@
 FROM microsoft/aspnetcore-build:2.0 AS build-env
 COPY src /app
-WORKDIR /app
+WORKDIR /home/ec2-user/app
 
 RUN dotnet restore --configfile ../NuGet.Config
 RUN dotnet publish -c Release -o out
