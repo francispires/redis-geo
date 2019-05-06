@@ -1,8 +1,8 @@
 FROM microsoft/aspnetcore-build:2.0 AS build-env
-COPY src /home/ec2-user/app
-WORKDIR /home/ec2-user/app
+COPY src /app
+WORKDIR /app
 
-RUN dotnet restore --configfile ../NuGet.Config
+RUN dotnet restore --configfile ./NuGet.Config
 RUN dotnet publish -c Release -o out
 
 # Build runtime image
