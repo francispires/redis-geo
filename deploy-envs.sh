@@ -10,7 +10,6 @@ export AWS_VIRTUAL_HOST=quiz.francispires.com.br
 export LETSENCRYPT_HOST=$AWS_VIRTUAL_HOST
 export LETSENCRYPT_EMAIL=team@servicestack.net
 
-
 # set any sensitive information in travis-ci encrypted project settings:
 # required: AWS_ACCOUNT_NUMBER, AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY
 # optional: SERVICESTACK_LICENSE
