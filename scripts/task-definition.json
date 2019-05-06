@@ -3,7 +3,7 @@
     "networkMode": "bridge",
     "containerDefinitions": [
         {
-            "image": "770676894615.dkr.ecr.us-east-2.amazonaws.com/redis-geo:latest",
+            "image": "${AWS_ECS_REPO_DOMAIN}/${IMAGE_NAME}:${IMAGE_VERSION}",
             "name": "${IMAGE_NAME}",
             "cpu": 128,
             "memory": 256,
@@ -22,16 +22,12 @@
                     "value": "${AWS_VIRTUAL_HOST}"
                 },
                 {
+                    "name": "SERVICESTACK_LICENSE",
+                    "value": "${SERVICESTACK_LICENSE}"
+                },
+                {
                     "name": "REDIS_HOST",
                     "value": "${IMAGE_NAME}-redis"
-                },
-                {
-                    "name": "LETSENCRYPT_HOST",
-                    "value": "${LETSENCRYPT_HOST}"
-                },
-                {
-                    "name": "LETSENCRYPT_EMAIL",
-                    "value": "${LETSENCRYPT_EMAIL}"
                 }
             ]
         },
