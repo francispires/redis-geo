@@ -28,6 +28,14 @@
                 {
                     "name": "REDIS_HOST",
                     "value": "${IMAGE_NAME}-redis"
+                },
+                {
+                    "name": "LETSENCRYPT_HOST",
+                    "value": "${LETSENCRYPT_HOST}"
+                },
+                {
+                    "name": "LETSENCRYPT_EMAIL",
+                    "value": "${LETSENCRYPT_EMAIL}"
                 }
             ]
         },
